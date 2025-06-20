@@ -10,3 +10,5 @@ aws eks update-kubeconfig --regio us-east-2 --name staging-demo --profile develo
 
 kubectl config view --minify
 
+aws sts assume-role --role-arn arn:aws:iam::887290441851:role/staging-demo-eks-admin --role-session-name manager-session --profile manager
+
