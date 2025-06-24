@@ -13,3 +13,7 @@ kubectl config view --minify
 aws sts assume-role --role-arn arn:aws:iam::887290441851:role/staging-demo-eks-admin --role-session-name manager-session --profile manager
 
 kubectl logs -l app.kubernetes.io/instance=metrics-server -f -n kube-system
+
+watch -t kubectl get hpa -n 10-example
+
+
