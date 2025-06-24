@@ -72,18 +72,18 @@ resource "helm_release" "cluster_autoscaler" {
   namespace  = "kube-system"
   version    = "9.37.0"
 
-  set {
+  set = {
     name  = "rbac.serviceAccount.name"
     value = "cluster-autoscaler"
   }
 
-  set {
+  set = {
     name  = "autoDiscovery.clusterName"
     value = aws_eks_cluster.eks.name
   }
 
   # MUST be updated to match your region 
-  set {
+  set = {
     name  = "awsRegion"
     value = "us-east-2"
   }
